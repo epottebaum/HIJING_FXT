@@ -21,10 +21,7 @@ hijingcpp.cxx: ./Hij output_file_name.root config_file_name
 hijingHep.cxx: ./HijHep output_file_name.hepmc config_file_name
 hijingHepROOT.cxx: ./HijHepRoot hepmc_outfile.hepmc root_outfile.root config_file_name
 
-hijingcpp.cxx and hijingHep.cxx currently put the output file in /gpfs/gibbs/project/havener/egp28/HIJING-out, might add an option to more easily change the output path later
-hijingHepROOT.cxx sends output to /vast/palmer/scratch/havener/egp28/HIJING-out
-
-hijing_config.txt contains the HIJING parameters that will be used if no config file is specified when running the executable. 
+Output files are sent to the directory specified on the first line of the config file.
 
 VERSIONS
 current: hijingcpp.cxx, hijingHep.cxx, hijingHepROOT.cxx
