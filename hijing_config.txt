@@ -1,0 +1,12 @@
+/vast/palmer/scratch/havener/egp28/
+1 # number of events to simulate
+1 # 0 for CMS, 1 for LAB
+6 # projectile type. 0-6 for P, PBAR, N, NBAR, PI+, PI-, A
+6 # target type. same options as above
+197 # <Au 197> mass number of projectile
+79 # <Au 79> charge (proton) number of projectile
+197 # <Au 197> mass number of target
+79 # <Au 79> charge (proton) number of target
+100 # colliding energy [GeV] per nucleon in frame (CMS or LAB, line 3)
+0 # impact parameter minimum
+-1 # impact parameter maximum (set to -1 for min bias)

@@ -1,0 +1,5 @@
+/home/egp28/hijing_wrapper/build/CMakeFiles/Hij.dir
+/home/egp28/hijing_wrapper/build/CMakeFiles/HijHep.dir
+/home/egp28/hijing_wrapper/build/CMakeFiles/HijHepRoot.dir
+/home/egp28/hijing_wrapper/build/CMakeFiles/edit_cache.dir
+/home/egp28/hijing_wrapper/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,6 @@
+#root -l -q 'plot_rapidity.C(0,0)'
+root -q 'plot_rapidity.C(0,1)'
+root -q 'plot_rapidity.C(0,2)'
+root -q 'plot_rapidity.C(1,0)'
+root -q 'plot_rapidity.C(1,1)'
+root -q 'plot_rapidity.C(1,2)'
