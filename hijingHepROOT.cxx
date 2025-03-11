@@ -435,7 +435,7 @@ int main(int argc, char **argv)
 		// ---------------------------------------------------------------------------------
 		// Fill event-level branches of hijTree
 		// ---------------------------------------------------------------------------------
-		eventNum = Nev_tot;
+		eventNum = Nev_tot-1; // NEW CHANGE Mar 11 2025 -- to match with HepMC event number
 		numParticles = himain1.natt;
 		b = hiparnt.hint1[18];
 
@@ -560,7 +560,7 @@ int main(int argc, char **argv)
 		outputWriter.write_event(Hep_event);
 		Hep_event.clear();
 		hijTree->Fill();
-		Nev_tot++;
+		//Nev_tot++;
 	} // end loop over events	
 	outputWriter.close();
 	hijTree->Write();
