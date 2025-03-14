@@ -1,7 +1,6 @@
 // Generate HIJING events, output to both HepMC and a ROOT TTree
 // essentially just re-writing Niseem's code (Niseem_Hij_HepMC3 on Github)
 // February 17, 2025
-// Edits March 17, 2025: don't save beams or incoming gold nucleons to HepMC event record
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -320,7 +319,7 @@ int main(int argc, char **argv)
 		}
 		BeamPP->set_generated_mass(mass_au_gev);
 		BeamPT->set_generated_mass(mass_au_gev);
-		Hep_event.set_beam_particles(BeamPP, BeamPT); // set_beam_particles is deprecated 
+		Hep_event.set_beam_particles(BeamPP, BeamPT);
 
 		// ---------------------------------------------------------------------------------
 		// Set up initial (projectile and target) vertices 
@@ -339,7 +338,6 @@ int main(int argc, char **argv)
 			BeamP_vertex = std::make_shared<GenVertex>(FourVector(ImpactP, 0.0, 0.0, 0.0)); // TODO: check this is correct
 			BeamT_vertex = std::make_shared<GenVertex>(FourVector(0.0, 0.0, 0.0, 0.0)); // TODO: only valid for target at origin? !!!!!!!!!!!!!
 		}
-	
 		BeamP_vertex->add_particle_in(BeamPP); // add projectile beam as ingoing particle to projectile vertex
 		BeamT_vertex->add_particle_in(BeamPT); // add target beam as ingoing particle to target vertex
 
@@ -360,7 +358,7 @@ int main(int argc, char **argv)
 				npart0++;
 			}
 		} // end loop over projectile nucleons
-		//Hep_event.add_vertex(BeamP_vertex); // commented out - March 14
+		Hep_event.add_vertex(BeamP_vertex);
 
 		// Now do the same thing for the target nucleons
 		for(int it=0; it<IAT; it++){ // loop over target nucleons
@@ -378,7 +376,7 @@ int main(int argc, char **argv)
 				npart0++;
 			}
 		} // end loop over target nucleons
-		//Hep_event.add_vertex(BeamT_vertex); // commented out - March 14
+		Hep_event.add_vertex(BeamT_vertex);
 
 		// ---------------------------------------------------------------------------------
 		//  For our next act we shall calculate the eccentricity (and then never use it??)
